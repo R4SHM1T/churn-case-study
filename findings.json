@@ -1,0 +1,63 @@
+{
+  "n": 2000,
+  "overall_churn": 27.2,
+  "by_contract": {
+    "month-to-month": 38.1,
+    "two-year": 16.0,
+    "one-year": 12.8
+  },
+  "by_tenure": {
+    "0-6": 48.6,
+    "7-12": 43.7,
+    "13-24": 38.2,
+    "25-48": 25.4,
+    "49-72": 12.7
+  },
+  "by_tickets": {
+    "5+": 50.0,
+    "3-4": 35.7,
+    "1-2": 26.9,
+    "0": 19.0
+  },
+  "by_payment": {
+    "manual": 31.6,
+    "auto": 24.4
+  },
+  "model": {
+    "accuracy": 0.764,
+    "auc": 0.778
+  },
+  "top_drivers": [
+    {
+      "feature": "tenure_months",
+      "coef": -0.797
+    },
+    {
+      "feature": "contract_one-year",
+      "coef": -0.749
+    },
+    {
+      "feature": "contract_two-year",
+      "coef": -0.499
+    },
+    {
+      "feature": "support_tickets",
+      "coef": 0.393
+    },
+    {
+      "feature": "plan_premium",
+      "coef": 0.288
+    },
+    {
+      "feature": "payment_method_manual",
+      "coef": 0.219
+    }
+  ],
+  "segment": {
+    "name": "month-to-month, tenure<=12, tickets>=3",
+    "customers": 41,
+    "churn_pct": 73.2,
+    "mrr_at_risk": 1601.08,
+    "arr_at_risk": 19212.96
+  }
+}
