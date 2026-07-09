@@ -1,32 +1,11 @@
-# churn-case-study
+# Telco Churn Case Study
 
-An analyst case study that turns a subscription table into a single costed recommendation: segment analysis, a from-scratch logistic regression (NumPy, no sklearn), revenue-at-risk sizing, and four charts. Runs fully offline.
+This is a quick EDA I put together using the IBM Telco customer churn dataset to see what's actually driving customer drop-offs.
 
-**Read the write-up: [CASE_STUDY.md](CASE_STUDY.md)**
+**The main finding:** ~88.6% of the people who churn are on month-to-month contracts.
 
-## Run
-
-```bash
-python3 generate_data.py   # creates a reproducible synthetic dataset
-python3 analyze.py         # segments + model + charts/ + findings.json
-```
-
-Only `pandas`, `numpy`, and `matplotlib` are required.
-
-## Use real data
-
-Replace `data/subscriptions.csv` with any CSV that has these columns and re-run `analyze.py`:
-
-```
-customer_id, contract, plan, payment_method, tenure_months, support_tickets, monthly_charges, churned
-```
-
-`churned` must be 0 or 1. Everything else, including the charts and the revenue-at-risk segment, recomputes automatically.
-
-## What it demonstrates
-
-- Framing a vague business problem into an answerable question
-- Segmentation and the confound check (why segments alone mislead)
-- A transparent, dependency-free model with honest validation (AUC reported)
-- Translating drivers into a costed, testable recommendation with a holdout
-- Clear data-provenance and caveats
+## How to run it
+If you want to run this yourself:
+1. Clone the repo and install `pandas`, `numpy`, `matplotlib`, `seaborn`, and `scikit-learn`.
+2. Open `eda.ipynb`.
+3. Run all cells (the dataset is already cached in the `data/` folder).
